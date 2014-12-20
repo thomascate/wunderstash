@@ -62,6 +62,7 @@ floats = [
           'precip_1hr_metric',
           'precip_today_in',
           'precip_today_metric',
+          'pressure_in',
           'pressure_mb',
           'solarradiation',
           'temp_c' ,
