@@ -41,6 +41,12 @@ if esObject['_source']['current_observation']['observation_location']['longitude
     float(esObject['_source']['current_observation']['observation_location']['latitude'])
   ]
 
+if esObject['_source']['current_observation']['relative_humidity']:
+  try:
+    esObject['_source']['current_observation']['relative_humidity_percent'] = float(esObject['_source']['current_observation']['relative_humidity'][:-1])
+  except:
+    pass
+
 #clean up data since Wunderground responds with unicode numbers occasionally
 #this sucks
 floats = [
