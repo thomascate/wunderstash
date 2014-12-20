@@ -35,6 +35,12 @@ if esObject['_source']['current_observation']['observation_epoch']:
 else:
   esObject['_source']['@timestamp'] = datetime.utcnow()
 
+if esObject['_source']['current_observation']['observation_location']['longitude']:
+  esObject['_source']['current_observation']['observation_location']['bettermap_field'] = [
+    float(esObject['_source']['current_observation']['observation_location']['longitude']),
+    float(esObject['_source']['current_observation']['observation_location']['latitude'])
+  ]
+
 #clean up data since Wunderground responds with unicode numbers occasionally
 #this sucks
 floats = [
@@ -51,6 +57,7 @@ floats = [
           'precip_today_in',
           'precip_today_metric',
           'pressure_mb',
+          'solarradiation',
           'temp_c' ,
           'temp_f',
           'visibility_km',
