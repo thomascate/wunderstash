@@ -67,14 +67,14 @@ floats = [
           'solarradiation',
           'temp_c' ,
           'temp_f',
+          'UV',
           'visibility_km',
+          'visibility_mi',
           'wind_degrees',
           'wind_gust_kph',
           'wind_gust_mph',
           'wind_kph',
           'wind_mph',
-          'UV',
-          'visibility_mi',
 ]
 
 for entry in floats:
